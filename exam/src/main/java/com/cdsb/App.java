@@ -1,4 +1,4 @@
-package com.cdsb;
+package zoo.cdsb;
 
 /**
  * Hello world!
