@@ -1,8 +1,9 @@
 package com.cdsb.classes;
 
 import com.cdsb.enums.*;
+import com.cdsb.interfaces.IAnimals;
 
-public abstract class Animal {
+public class Animal implements IAnimals{
     private String name;
     private AnimalType type;
     private Diet diet;
@@ -16,12 +17,34 @@ public abstract class Animal {
         this.behavior = behavior;
         this.spaceRequired = spaceRequired;
     }
+    @Override
+    public String getName() {
+        return name;
+    }
 
-    public String getName() { return name; }
-    public AnimalType getType() { return type; }
-    public Diet getDiet() { return diet; }
-    public Behavior getBehavior() { return behavior; }
-    public double getSpaceRequired() { return spaceRequired; }
+    @Override
+    public AnimalType getType() {
+        return type;
+    }
+    @Override
+    public Behavior getBehavior() {
+        return behavior;
+    }
+    @Override
+    public double getSpaceRequired() {
+         return spaceRequired;
+    }
 
-    public abstract void makeSound();
+    @Override
+    public Diet getDietType() {
+        return diet;
+    }
+
+    @Override
+    public boolean canBeTogether() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'canBeTogether'");
+    }
+
+
 }
