@@ -1,33 +1,27 @@
 package com.cdsb.classes;
 
-import com.cdsb.enums.Behavior;
+import com.cdsb.enums.*;
 
-import com.cdsb.interfaces.IAnimals;
+public abstract class Animal {
+    private String name;
+    private AnimalType type;
+    private Diet diet;
+    private Behavior behavior;
+    private double spaceRequired;
 
-public class Animal implements IAnimals {
-
-    @Override
-    public String getType() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getType'");
+    public Animal(String name, AnimalType type, Diet diet, Behavior behavior, double spaceRequired) {
+        this.name = name;
+        this.type = type;
+        this.diet = diet;
+        this.behavior = behavior;
+        this.spaceRequired = spaceRequired;
     }
 
-    @Override
-    public String getName() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getName'");
-    }
+    public String getName() { return name; }
+    public AnimalType getType() { return type; }
+    public Diet getDiet() { return diet; }
+    public Behavior getBehavior() { return behavior; }
+    public double getSpaceRequired() { return spaceRequired; }
 
-    @Override
-    public double getSpaceRequired() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getSpaceRequired'");
-    }
-
-    @Override
-    public Behavior getBehavior() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBehavior'");
-    }
-
+    public abstract void makeSound();
 }
